@@ -106,3 +106,5 @@
 
     };
 };
+
+// override https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/sofle/sofle.keymap
