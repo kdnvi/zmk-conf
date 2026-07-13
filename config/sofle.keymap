@@ -77,11 +77,11 @@
 // |       | UNDO      | CUT       | COPY | PASTE |      |      |  |      |      | MUTE  | VOLDN | VOLUP |       |       |
 //                     |           |      |       |      |      |  |      |      |       |       |       |
             bindings = <
-&trans  &trans                                  &trans                            &trans      &trans           &trans    &trans    &trans     &trans   &trans      &trans        &trans
-&trans  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS &kp END     &kp K_REDO       &trans    &trans    &kp PG_UP  &kp INS  &kp C_PREV  &kp C_PP      &kp C_NEXT
-&trans  &kp HOME                                &kp PSCRN                         &kp PG_DN   &kp C_AC_SEARCH  &kp CLCK  &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT   &kp C_BRI_DN  &kp C_BRI_UP
-&trans  &kp K_UNDO                              &kp K_CUT                         &kp K_COPY  &kp K_PASTE      &trans    &trans    &trans     &trans   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP &trans        &trans
-                                                &trans                            &trans      &trans           &trans    &trans    &trans     &trans   &trans      &trans        &trans
+&trans  &trans                                  &trans                            &trans      &trans           &trans                    &trans    &trans      &trans        &trans        &trans        &trans
+&trans  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS &kp END     &kp K_REDO       &trans                    &trans    &kp PG_UP   &kp INS       &kp C_PREV    &kp C_PP      &kp C_NEXT
+&trans  &kp HOME                                &kp PSCRN                         &kp PG_DN   &kp C_AC_SEARCH  &kp CLCK                  &kp LEFT  &kp DOWN    &kp UP        &kp RIGHT     &kp C_BRI_DN  &kp C_BRI_UP
+&trans  &kp K_UNDO                              &kp K_CUT                         &kp K_COPY  &kp K_PASTE      &trans    &trans  &trans  &trans    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans        &trans
+                                                &trans                            &trans      &trans           &trans    &trans  &trans  &trans    &trans      &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
