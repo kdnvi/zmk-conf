@@ -31,13 +31,13 @@
 // |   `   |  Q  |   W   |  E  |  R  |  T   |                   |   Y   |  U  |  I  |  O   |  P  |   \   |
 // |  TAB  |  A  |   S   |  D  |  F  |  G   |                   |   H   |  J  |  K  |  L   |  ;  |   '   |
 // | SHIFT |  Z  |   X   |  C  |  V  |  B   |  MUTE  |  | SLCK  |   N   |  M  |  ,  |  .   |  /  | SHIFT |
-//               | RAISE | CMD | ALT | CTRL |  ENTER |  | SPACE | LOWER | ALT | CMD | CTRL |
+//               | RAISE | CMD | ALT | CTRL |  ENTER |  | SPACE | LOWER | CMD | ALT | CTRL |
             bindings = <
 &kp ESC    &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                            &kp N6     &kp N7    &kp N8     &kp N9     &kp N0    &kp BSPC
 &kp GRAVE  &kp Q   &kp W      &kp E     &kp R     &kp T                             &kp Y      &kp U     &kp I      &kp O      &kp P     &kp BSLH
 &kp TAB    &kp A   &kp S      &kp D     &kp F     &kp G                             &kp H      &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B      &kp C_MUTE  &kp SLCK   &kp N      &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
-                   &mo RAISE  &kp LCMD  &kp LALT  &kp LCTRL  &kp RET     &kp SPACE  &mo LOWER  &kp RALT  &kp RCMD   &kp RCTRL
+                   &mo RAISE  &kp LCMD  &kp LALT  &kp LCTRL  &kp RET     &kp SPACE  &mo LOWER  &kp RCMD  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -48,16 +48,16 @@
 // TODO: Some binds are waiting for shifted keycode support.
 // ---------------------------------------------------------------------------------------------------------
 // |       |  F1  |  F2 |  F3 |  F4  |  F5  |                   |  F6  |  F7  |  F8  |  F9   | F10 |  F11  |
-// |   ~   |  [   |  ]  |  =  |  &   |  @   |                   |      |  _   |  *   |  (    |  )  |  F12  |
-// |       |  +   |  -  |  $  |  END |      |                   | LEFT | DOWN |  UP  | RIGHT |  :  |       |
-// |       |      |  !  |  ^  |      | HOME |        |  |       |  #   |  %   |  {   |  }    |     |       |
+// |   ~   |  !   |  @  |  #  |  $   |  %   |                   |  ^   |  &   |  *   |  (    |  )  |  F12  |
+// |       |  +   |  -  |  =  |  END |  _   |                   | LEFT | DOWN |  UP  | RIGHT |  :  |       |
+// |       |      |     |     |      | HOME |        |  |       |  [   |  ]   |  {   |  }    |     |       |
 //                |     |     |      |      |        |  |       |      |      |      |       |
             bindings = <
-&trans     &kp F1    &kp F2     &kp F3     &kp F4    &kp F5                   &kp F6    &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&kp TILDE  &kp LBKT  &kp RBKT   &kp EQUAL  &kp AMPS  &kp AT                   &trans    &kp UNDER  &kp ASTRK  &kp LPAR   &kp RPAR   &kp F12
-&trans     &kp PLUS  &kp MINUS  &kp DLLR   &kp END   &trans                   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp COLON  &trans
-&trans     &trans    &kp EXCL   &kp CARET  &trans    &kp HOME  &trans &trans  &kp HASH  &kp PRCNT  &kp LBRC   &kp RBRC   &trans     &trans
-                     &trans     &trans     &trans    &trans    &trans &trans  &trans    &trans     &trans     &trans
+&trans     &kp F1    &kp F2     &kp F3     &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8     &kp F9     &kp F10    &kp F11
+&kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp DLLR  &kp PRCNT                 &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR   &kp F12
+&trans     &kp PLUS  &kp MINUS  &kp EQUAL  &kp END   &kp UNDER                 &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &kp COLON  &trans
+&trans     &trans    &trans     &trans     &trans    &kp HOME   &trans &trans  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC   &trans     &trans
+                     &trans     &trans     &trans    &trans     &trans &trans  &trans     &trans    &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -65,18 +65,18 @@
 
         raise_layer {
             display-name = "raise";
-// ---------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1   | BT2   | BT3  | BT4    | BT5  |                |      |       |       |       |      |       |
-// |       |       |       | END  | REDO   |      |                |      | PGUP  | BRIDN | BRIUP |  PP  |       |
-// |       | HOME  | PSCR  | PGDN | SEARCH | CAPS |                | PREV |       |       | NEXT  |      |       |
-// |       | UNDO  | CUT   | COPY | PASTE  |      |      |  |      |      | MUTE  | VOLDN | VOLUP |      |       |
-//                 |       |      |        |      |      |  |      |      |       |       |       |
+// -----------------------------------------------------------------------------------------------------------------
+// | BTCLR | BT1   | BT2   | BT3  | BT4    | BT5   |                 |      |       |       |       |      |       |
+// |       |       |       | END  | REDO   |       |                 |      | PGUP  | BRIDN | BRIUP |  PP  |       |
+// |       | HOME  | PSCR  | PGDN | SEARCH | CAPS  |                 | PREV |       |       | NEXT  |      |       |
+// |       | UNDO  | CUT   | COPY | PASTE  | BKSPC |       |  |      |      | MUTE  | VOLDN | VOLUP |      |       |
+//                 |       |      |        |       | SPACE |  |      |      |       |       |       |
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                  &trans      &trans      &trans        &trans        &trans    &trans
-&trans      &trans        &trans        &kp END       &kp K_REDO       &trans                        &trans      &kp PG_UP   &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PP  &trans
-&trans      &kp HOME      &kp PSCRN     &kp PG_DN     &kp C_AC_SEARCH  &kp CLCK                      &kp C_PREV  &trans      &trans        &kp C_NEXT    &trans    &trans
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE      &trans        &trans  &trans  &trans      &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans    &trans
-                          &trans        &trans        &trans           &trans        &trans  &trans  &trans      &trans      &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                     &trans      &trans      &trans        &trans        &trans    &trans
+&trans      &trans        &trans        &kp END       &kp K_REDO       &trans                           &trans      &kp PG_UP   &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PP  &trans
+&trans      &kp HOME      &kp PSCRN     &kp PG_DN     &kp C_AC_SEARCH  &kp CLCK                         &kp C_PREV  &trans      &trans        &kp C_NEXT    &trans    &trans
+&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE      &kp BSPC      &trans     &trans  &trans      &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans    &trans
+                          &trans        &trans        &trans           &trans        &kp SPACE  &trans  &trans      &trans      &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
