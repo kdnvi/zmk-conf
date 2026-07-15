@@ -48,16 +48,16 @@
 // TODO: Some binds are waiting for shifted keycode support.
 // ---------------------------------------------------------------------------------------------------------
 // |       |  F1  |  F2 |  F3 |  F4  |  F5  |                   |  F6  |  F7  |  F8  |  F9   | F10 |  F11  |
-// |   ~   |  !   |  @  |  #  |  $   |  %   |                   |  ^   |  &   |  *   |  (    |  )  |  F12  |
-// |       |  +   |  -  |  =  |  END |  _   |                   | LEFT | DOWN |  UP  | RIGHT |  :  |       |
-// |       |      |     |     |      | HOME |        |  |       |  [   |  ]   |  {   |  }    |     |       |
+// |   ~   |      |     |  =  |  &   |  #   |                   |  ^   |  _   |  *   |  [    |  +  |  F12  |
+// |       |  @   |  $  |  %  |  END |      |                   | LEFT | DOWN |  UP  | RIGHT |  ]  |       |
+// |       |      |  !  |  {  |  }   | HOME |        |  |       |      |  -   |  (   |  )    |     |       |
 //                |     |     |      |      |        |  |       |      |      |      |       |
             bindings = <
-&trans     &kp F1    &kp F2     &kp F3     &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8     &kp F9     &kp F10    &kp F11
-&kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp DLLR  &kp PRCNT                 &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR   &kp F12
-&trans     &kp PLUS  &kp MINUS  &kp EQUAL  &kp END   &kp UNDER                 &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &kp COLON  &trans
-&trans     &trans    &trans     &trans     &trans    &kp HOME   &trans &trans  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC   &trans     &trans
-                     &trans     &trans     &trans    &trans     &trans &trans  &trans     &trans    &trans     &trans
+&trans     &kp F1  &kp F2    &kp F3     &kp F4    &kp F5                    &kp F6     &kp F7     &kp F8     &kp F9     &kp F10   &kp F11
+&kp TILDE  &trans  &trans    &kp EQUAL  &kp AMPS  &kp HASH                  &kp CARET  &kp UNDER  &kp ASTRK  &kp LBKT   &kp PLUS  &kp F12
+&trans     &kp AT  &kp DLLR  &kp PRCNT  &kp END   &trans                    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp RBKT  &trans
+&trans     &trans  &kp EXCL  &kp LBRC   &kp RBRC  &kp HOME   &trans &trans  &trans     &kp MINUS  &kp LPAR   &kp RPAR   &trans    &trans
+                   &trans    &trans     &trans    &trans     &trans &trans  &trans     &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
